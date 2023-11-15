@@ -42,16 +42,6 @@
 </tr>
 
 
-<tr> 
-  <td> Nisal </td>
-  <td> Aspirine</td>
-  <td> 123</td>
-  <td> 12</td>
-  <td> 2023/10/03</td>
-  <td> <button class="smallOpen-button"> Edit </button> </td>   
- 
-</tr>
-
 </table>
 </div>
 

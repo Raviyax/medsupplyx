@@ -28,10 +28,23 @@ class pharmacy
 
     public function getOrder()
     {
-        $this->db->query('SELECT * FROM `requestorder`');
-
+        $this->db->query('SELECT * FROM requestorder');
         $results = $this->db->resultSet();
-
         return $results;
+    }
+   
+
+    public function deleteOrder($id)
+    {
+        $this->db->query('DELETE FROM requestorder WHERE id = :id');
+        // Bind values
+        $this->db->bind(':id', $id);
+        // Execute
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }

@@ -1,6 +1,8 @@
 <?php
 class Managers extends Controller {
     public $managerModel;
+    public $userModel;
+    public $db;
 
     public function __construct() {
         $this->managerModel = $this->model('Manager');
@@ -27,13 +29,7 @@ public function registration() {
     $this->view('manager/registration', $data);
 }
 
-public function approvePharmacy($id) {
-    if($this->managerModel->approvePharmacy($id)) {
-        $this->view('popup/approved');
-    } else {
-        die('Something went wrong');
-    }
-}
+
 
 public function rejectPharmacy($id) {
     if($this->managerModel->rejectPharmacy($id)) {
@@ -92,11 +88,108 @@ public function profile() {
 }
 
 public function logout() {
-    $data = [];
+    unset($_SESSION['USER_DATA']);
+    redirect('users/login');
+ }
+
+public function approve_supplier() {
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if(isset($_POST['acceptsupplier'])){
+            $this->db = new Database;                                   
+            $email = $_POST['acceptsupplier'];
+            $data = [
+                'email' => $email
+            ];
+            $keys = array_keys($data);
+        $query = "SELECT * FROM supplierregistration WHERE ";
+        $conditions = [];
+        foreach ($keys as $key) {
+            $conditions[] = $key . "=:" . $key;
+        }
+        $query .= implode(' AND ', $conditions) . ' ORDER BY id DESC LIMIT 1';
     
-    $this->view('manager/logout', $data);
+        $res = $this->db->query2($query, $data);
+        
+           $name = $res[0]->name;
+           $email = $res[0]->email;
+           $password = $res[0]->password;        
 
+        $this->db->query('INSERT INTO users (name, email, password , role) VALUES(:name, :email , :password, :role)');
+    
+ 
+        // Bind values
+        
+        $this->db->bind(':name',$name);
+        $this->db->bind(':email',  $email);
+        $this->db->bind(':password', $password);
+        $this->db->bind(':role', 'supplier');
+
+        // Execute
+        if($this->db->execute()) {
+            header('location: ' . URLROOT . '/managers/registration');
+
+            return true;
+        } else {
+            return false;
+        }
+        
+        header('location: ' . URLROOT . '/managers/registration');
+       
+    
+        }
+    }
 }
 
+public function approve_pharmacy() {
 
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if(isset($_POST['acceptpharmacy'])){
+            $this->db = new Database;                                   
+            $email = $_POST['acceptpharmacy'];
+            $data = [
+                'email' => $email
+            ];
+            $keys = array_keys($data);
+        $query = "SELECT * FROM pharmacyregistration WHERE ";
+        $conditions = [];
+        foreach ($keys as $key) {
+            $conditions[] = $key . "=:" . $key;
+        }
+        $query .= implode(' AND ', $conditions) . ' ORDER BY id DESC LIMIT 1';
+    
+        $res = $this->db->query2($query, $data);
+        
+           $name = $res[0]->name;
+           $email = $res[0]->email;
+           $password = $res[0]->password;        
+
+        $this->db->query('INSERT INTO users (name, email, password , role) VALUES(:name, :email , :password, :role)');
+    
+ 
+        // Bind values
+        
+        $this->db->bind(':name',$name);
+
+        $this->db->bind(':email',  $email);
+        $this->db->bind(':password', $password);
+        $this->db->bind(':role', 'pharmacy');
+
+        // Execute
+        if($this->db->execute()) {
+            header('location: ' . URLROOT . '/managers/registration');
+
+            return true;
+        } else {
+            return false;
+        }
+        
+        header('location: ' . URLROOT . '/managers/registration');
+       
+    
+        }
+    }
+        
 }
+}
+

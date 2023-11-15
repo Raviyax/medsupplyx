@@ -63,7 +63,8 @@
   <td> <?php echo $order->createdAt; ?> </td>
   <td> <?php echo $order->orderEndDate; ?> </td>
   <td> <?php echo $order->deliveryDate; ?> </td>
-  <td> <button class="smallOpen-button"> change </button>   <button class="smallOpen-button"> Delete </button>  </td>
+  <td> <button class="smallOpen-button"> change </button>   
+  <button class="smallOpen-button" name="delete"> Delete </button>  </td>
 </tr>
 <?php endforeach; ?>
 </table>

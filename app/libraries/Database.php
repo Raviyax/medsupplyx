@@ -16,6 +16,7 @@ class Database {
     private $dbh; //database handler
     private $stmt; //statement
     private $error;
+    private$dsn;
 
     public function __construct(){
         // Set DSN
@@ -32,6 +33,34 @@ class Database {
             $this->error = $e->getMessage();
             echo $this->error;
         }
+    }
+
+    public function connect()
+    {
+      $str ='mysql:host=' . $this->host . ';dbname=' . $this->dbname; 
+      $conn = new PDO($str, DB_USER, DB_PASS);
+      return $conn;
+    }
+
+    public function query2($query, $data = [], $type = 'object')
+    {
+        $conn = $this->connect();
+      $stm = $conn->prepare($query);
+      if ($stm) {
+        $check = $stm->execute($data);
+        if ($check) {
+          if ($type == 'object') {
+            $result = $stm->fetchAll(PDO::FETCH_OBJ);
+          } else {
+            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+          }
+          if (is_array($result) && count($result) >0) {
+            return $result;
+          } else {
+            return false;
+          }
+        }
+      }
     }
 
     // Prepare statement with query

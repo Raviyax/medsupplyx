@@ -21,7 +21,7 @@
 <div class="anim">
 <div class="container-fluid">
 <div class="d-flex">
-  <form action="" method="" class="orderform">
+  <form action="" method="POST" class="orderform">
     
     <table> 
     <tr> <td class="verticleCentered"> 

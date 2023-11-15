@@ -126,8 +126,9 @@ body {
 .userbtn{
   width:200px;
   margin:auto;
-  background-color: #020551;
-  color:white;
+  background-color: transparent;
+  color:#020551;
+  border:1px solid #020551;
 }
 
 .userbtn2{
@@ -136,6 +137,35 @@ body {
   background-color: #020551;
   color:white;
   margin-bottom:80px;
+ 
+}
+
+.logintext{
+  margin:auto;
+  margin-top:50px;
+  text-align:center;
+  margin-left:230px;
+  color:#062757;
+
+}
+
+.userbtn:hover{
+  background-color: #020551;
+  color:white;
+  border:1px solid #020551;
+  transform: translateY(-5px);
+  transition: 0.3s ease-in-out;
+
+}
+
+.userbtn2:hover{
+  background-color: white;
+  color:#020551;
+  border:1px solid #020551;
+  transition:0.5s;
+}
+.forgot{
+  margin-top: 30px;
 }
 
 .buttons{

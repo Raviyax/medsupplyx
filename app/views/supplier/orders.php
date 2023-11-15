@@ -23,7 +23,7 @@
 <table class="customers">
   <tr>
   
-    <th> Pharmacy Name </th>
+   
     <th> Medicine Name </th>
     <th> Batch No </th>
     <th> Quantity </th>
@@ -38,33 +38,25 @@
   <td> </td>
   <td> </td>
   <td> </td>
-  <td> </td>
+
   
   <td> <!-- <button class="smallOpen-button" onclick="openForm()"> accept </button> -->  </td>
 </tr>
 
 <?php foreach($data['order'] as $order) : ?>
 <tr> 
-  <td> <?php echo $order->pharmacy_name; ?> </td>
+
   <td> <?php echo $order->medicine; ?> </td>
   <td> <?php echo $order->batchno; ?> </td>
   <td> <?php echo $order->quantity; ?> </td>
   <td> <?php echo $order->deliveryDate; ?> </td>
   <td> <?php echo $order->orderEndDate; ?> </td>
-  <td> <a href="#popup1"><button class="smallOpen-button"> Accept </button> <button class="smallOpen-button" onclick=""> Reject </button> </td>
+  <td> <a href="#popup1"><button class="smallOpen-button"> Accept </button></a>
+       <button class="smallOpen-button" onclick=""> Reject </button> </td>
 </tr>
 <?php endforeach; ?>
 
-<tr> 
 
-  <td> Gagana Pharmacy </td>
-  <td> Erithropoityne </td>
-  <td> 99322</td>
-  <td> 1650</td>
-  <td> 2023/09/02</td>
-  <td> 2023/08/31  </td>
-  <td> <a href="#popup1"><button class="smallOpen-button"> Accept </button> </a> <button class="smallOpen-button" onclick=""> Reject </button> </td>
-</tr>
 
 
 
@@ -105,16 +97,6 @@
  
 </tr>
 
-<tr> 
-  <td> </td>
-  <td> Gagana Pharmacy </td>
-  <td> Erithropoityne </td>
-  <td> 99322</td>
-  <td> 1650</td>
-  <td> 2023/09/02</td>
-  <td> 1 200/= </td>
-  <td> <button class="smallOpen-button" onclick="openForm1()"> Edit </button></td>
-</tr>
 
 </table>
 </div>

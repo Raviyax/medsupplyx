@@ -44,16 +44,6 @@
   <td> <!-- <button> Accept </button> --> </td>
 </tr>
 
-<tr> 
-  
-  <td> </td>
-  <td> 1123 </td>
-  <td> ABC pharmacy </td>
-  <td> 22/4 , Pannipitiya </td>
-  <td> 011231321</td>
-  <td> abc@gmail.com</td>
-  <td>  <button class="smallOpen-button"> Edit </button> </td>
-</tr>
 
 </table>
 </div>

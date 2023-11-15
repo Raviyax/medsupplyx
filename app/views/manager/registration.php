@@ -21,7 +21,8 @@
   <h2 class="anim"> Pharmacies </h2>
   <p class="anim"> Here are all the Pharmacies who want to register to the MedSupplyX </p>
 
-<div class="anim">    
+  <div class="anim">    
+  <form  method="post" action="<?php echo URLROOT;?>/managers/approve_pharmacy">
 <table class="customers">
 <tr>
     
@@ -40,7 +41,7 @@
   <td> </td>
   <td> </td>
   <td> </td>
-  <td> <!-- <button> Accept </button> --> </td>
+  <td> </td>
 </tr>
 
 <?php foreach($data['pharmacyRegistration'] as $pharmacyRegistration) : ?>
@@ -51,8 +52,9 @@
   <td> <?php echo $pharmacyRegistration->address; ?> </td>
   <td> <?php echo $pharmacyRegistration->phone; ?> </td>
   <td> <?php echo $pharmacyRegistration->email; ?> </td>
-  <td> <a href="#popup1"><button class="smallOpen-button"> Accept </button></a> 
-       <a href="#popup2"><button class="smallOpen-button"> Reject </button></a>
+  <td> <button class="smallOpen-button" name="acceptpharmacy" value="<?php echo $pharmacyRegistration->email?>"> Accept </button>
+       <button class="smallOpen-button-red"> Reject </button> </td>
+
   </td>
 </tr>
 
@@ -60,13 +62,14 @@
 
 </table>
 </div>
-
+</form>
 
 <div class="space"></div> 
 <h2 class="anim"> Suppliers </h2>
   <p class="anim"> Here are all the Suppliers who want to register to the MedSupplyX </p>
 
 <div class="anim">    
+  <form  method="post" action="<?php echo URLROOT;?>/managers/approve_supplier">
 <table class="customers">
 <tr>
     
@@ -98,23 +101,16 @@
   <td> <?php echo $supplierRegistration->address; ?> </td>
   <td> <?php echo $supplierRegistration->phone; ?> </td>
   <td> <?php echo $supplierRegistration->email; ?> </td>
-  <td> <button class="smallOpen-button"> Accept </button> <button class="smallOpen-button"> Reject </button> </td>
+  <td> <button class="smallOpen-button" name="acceptsupplier" value="<?php echo $supplierRegistration->email?>"> Accept </button> 
+  <button class="smallOpen-button-red"> Reject </button> </td>
 </tr>
 <?php endforeach; ?>
 
-<tr> 
-  <td> </td>
-  <td> 1038921</td>
-  <td> ABC (pvt) Ltd  </td>
-  <td> 222/1 , Kottawa </td>
-  <td> 0705918924</td>
-  <td> abc@gmail.com</td>
-  <td> <button class="smallOpen-button"> Accept </button> <button class="smallOpen-button"> Reject </button> </td>
-</tr>
 
 
 
 </table>
+</form>
 </div>
 
 </div>
@@ -123,7 +119,7 @@
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
 
-
+<!-- 
 <div id="popup1" class="overlay">
 	<div class="popup">
   <form class="form-container">
@@ -156,5 +152,5 @@
 
 
 </body>
-</html>
+</html> -->
 

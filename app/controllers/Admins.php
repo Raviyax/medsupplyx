@@ -77,10 +77,10 @@ public function managerRegistration() {
         if(empty($data['mname_err']) && empty($data['memail_err']) && empty($data['mpassword_err']) && empty($data['mphone_err']) && empty($data['maddress_err'])) {
             // Validated
             // Hash Password
-            $data['mpassword'] = password_hash($data['mpassword'], PASSWORD_DEFAULT);
+          //  $data['mpassword'] = password_hash($data['mpassword'], PASSWORD_DEFAULT);
             // Register Manager
             if($this->adminModel->regManager($data)) {
-                flash('register_success', 'You are registered and can log in');
+                $this->view('popup/registered');
                 redirect('admins/managerRegistration');
             } else {
                 die('Something went wrong');
@@ -124,6 +124,8 @@ public function managers() {
 
 }
 
+
+
 public function messages() {
     $data = [];
     
@@ -160,11 +162,9 @@ public function profile() {
 }
 
 public function logout() {
-    $data = [];
-    
-    $this->view('admin/logout', $data);
-
-}
+    unset($_SESSION['USER_DATA']);
+    redirect('users/login');
+ }
 
 
 

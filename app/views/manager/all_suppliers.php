@@ -45,17 +45,6 @@
 
 
 
-<tr> 
-  
-  <td> </td>
-  <td> 1123 </td>
-  <td> ABC SL </td>
-  <td> 22/4 , Colombo 07</td>
-  <td> 0112189399</td>
-  <td> abc@gmail.com</td>
-  <td>  <button class="smallOpen-button"> Edit </button> </td>
-</tr>
-
 </table>
 </div>
 </div>

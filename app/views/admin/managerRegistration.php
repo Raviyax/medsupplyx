@@ -25,7 +25,7 @@
   <form action="<?php echo URLROOT; ?>/admins/managerRegistration" method="post" class="form-group">
     
     <table> 
-    <tr> <td colspan="2"> <h3>  Supplier Details </h3> </td></tr>
+    <tr> <td colspan="2"> <h3>  Manager Details </h3> </td></tr>
     <tr> <td class="verticleCentered"> 
       <span class="fname"> Manager Name  <span class="required">*</span> </td> 
       <td> : </td>

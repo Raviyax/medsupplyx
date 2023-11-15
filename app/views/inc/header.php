@@ -26,19 +26,9 @@
         </table>
       </div>
       <div class="greeting">  
-      <a href="#"><i class="fa-regular fa-bell"></i></a>  Hello , <?php 
-      if(isset($_SESSION['user_id'])){
-      echo $_SESSION['user_name'];}
-      if(isset($_SESSION['cashier_id'])){
-      echo $_SESSION['cashier_name'];}
-      if(isset($_SESSION['admin_id'])){
-      echo $_SESSION['admin_name'];}
-      if(isset($_SESSION['manager_id'])){
-      echo $_SESSION['manager_name'];}
-      if(isset($_SESSION['supplier_id'])){
-      echo $_SESSION['supplier_name'];} ?>
+      <a href="#"><i class="fa-regular fa-bell"></i></a>  Hello , <?php echo $_SESSION['USER_DATA']['name']; ?>
       
-      <img class="profile" src="<?php echo URLROOT ?>/public/img/profile.jpg" alt="profile">
+      <img class="profile" src="<?php echo URLROOT ?>/public/img/profile.png" alt="profile">
       </div>
     </div>
 

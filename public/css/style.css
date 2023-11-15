@@ -579,6 +579,24 @@ footer {
   text-align: center;
 }
 
+.smallOpen-button-red {
+  border:1px solid red;
+  padding: 5px 0px;
+  cursor: pointer;
+  width:80px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.smallOpen-button-red:hover{
+  background-color: red;
+  border:1px solid black;
+  color:rgb(255, 255, 255);
+  box-shadow: #494949 0px 0px 3px 0px;
+  transition: 0.5s;
+  transform:translateY(-4px);
+}
+
 .smallOpen-button:hover {
   background-color:#00607F;
   box-shadow: #ccc 0px 0px 20px 0px;
@@ -1141,6 +1159,18 @@ nav ul li:hover::before {
   transition: all 5s ease-in-out;
 }
 
+.userbtn2{
+  width:400px;
+  margin:auto;
+  background-color: #020551;
+  color:white;
+  margin-bottom:80px;
+}
+
+.userbtn:hover{
+  background-color: white;
+  color:#020551;
+}
 
 
 .popup h2 {

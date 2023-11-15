@@ -57,6 +57,11 @@
         $this->view('pharmacy/profile', $data);
     }
 
+    public function logout() {
+        unset($_SESSION['USER_DATA']);
+        redirect('users/login');
+     }
+
     public function new_order() {
     
 
@@ -142,6 +147,30 @@
         // Load view
         $this->view('pharmacy/new_order', $data);
     }
+}
+
+
+public function deleteOrder() {
+    if(isset($data['delete'])){
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Get existing post from model
+        $order = $this->pharmacyModel->getOrder();
+        
+
+        // Check for owner
+        if($order->user_id != $_SESSION['user_id']) {
+            redirect('pharmacies/orders');
+        }
+
+        if($this->pharmacyModel->deleteOrder()) {
+            redirect('pharmacies/orders');
+        } else {
+            die('Something went wrong');
+        }
+    } else {
+        redirect('pharmacies/orders');
+    }
+}
 }
 
 }

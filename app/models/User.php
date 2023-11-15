@@ -2,6 +2,7 @@
 class User {
     
     private $db;
+    protected $table = 'users';
 
     public function __construct() {
         $this->db = new Database;
@@ -39,6 +40,7 @@ class User {
         $this->db->bind(':licenceno', $data['licenceno']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
+    
 
         // Execute
         if($this->db->execute()) {
@@ -61,7 +63,16 @@ class User {
 
         // Execute
         if($this->db->execute()) {
+            $this->db->query('INSERT INTO users (name, email, password,role) VALUES(:name,  :email, :password , :role)');
+
+        // Bind values
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':password', $data['password']);
+        $this->db->bind(':role', 'cashier');
+        if($this->db->execute()) {
             return true;
+        }
         } else {
             return false;
         }
@@ -218,6 +229,25 @@ class User {
         } else {
             return false;
         }
+    }
+
+    public function first($data)
+    {
+        $keys = array_keys($data);
+        $query = "SELECT * FROM " . $this->table . " WHERE ";
+        $conditions = [];
+        foreach ($keys as $key) {
+            $conditions[] = $key . "=:" . $key;
+        }
+        $query .= implode(' AND ', $conditions) . ' ORDER BY id DESC LIMIT 1';
+    
+        $res = $this->db->query2($query, $data);
+    
+        if (is_array($res) && !empty($res)) {
+            return $res[0];
+        }
+    
+        return false;
     }
     
 }

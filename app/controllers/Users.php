@@ -84,7 +84,7 @@ class Users extends Controller {
             if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err']) && empty($data['address_err']) && empty($data['phone_err']) && empty($data['licenceno_err'])) {    
 
             // Hash password
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+               // $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
             // Register user
                 if($this->userModel->pharmacy($data)) {
@@ -203,7 +203,7 @@ class Users extends Controller {
             if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err']) && empty($data['address_err']) && empty($data['phone_err'])) {
 
             // Hash password
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+               // $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
             // Register user
                 if($this->userModel->supplier($data)) {
@@ -317,12 +317,12 @@ class Users extends Controller {
             if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err']) && empty($data['address_err']) && empty($data['phone_err'])) {
 
             // Hash password
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                // $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
             // Register user
                 if($this->userModel->cashier($data)) {
                     flash('register_success', 'You are registered and can log in');
-                    redirect('cashiers/login');
+                    redirect('users/login');
                     
                 } else {
                     die('Something went wrong');

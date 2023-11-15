@@ -77,4 +77,9 @@
 
     }
 
+    public function logout() {
+        unset($_SESSION['USER_DATA']);
+        redirect('users/login');
+     }
+
  }

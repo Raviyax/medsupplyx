@@ -3,36 +3,31 @@
         <section class="home">
             <div class="content">
               
-                <h2>Welcome!</h2>
-                <h3> Pharmacy </h3>
+            <h2> MedSupplyX </h2>
+                <h3>Welcome!</h3>
+     
+                
              
                 <div class="icon">
                     <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-twitter"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>
-            <div class="buttons"> 
-                <a href="<?php echo URLROOT . '/users/managerlogin';?>" class="link"> <button class="userbtn"> Manager </button> </a>
-                <a href="<?php echo URLROOT . '/users/managerlogin';?>" class="link"><button class="userbtn"> Supplier </button> </a>
-                <a href="<?php echo URLROOT . '/users/cashierlogin';?>" class="link"> <button class="userbtn"> Cashier </button> </a>
-                <a href="<?php echo URLROOT . '/users/adminlogin';?>" class="link"> <button class="userbtn"> Admin </button> </a>
-  
-            </div>
+        
             </div>
             
             <div class="login">
                 <h2>Log In</h2>
-                <form action="<?php echo URLROOT; ?>/users/login" method="post">
+                <form action="<?php echo URLROOT; ?>/login" method="post">
         <div class="input">
-                <input class="input1" type="email" name="email" <?php echo (!empty($data
-            ['name_err'])) ? 'is-invalid' : ''; ?> value="<?php echo $data['email']; ?>">
-            <span> <?php echo $data['email_err']; ?> </span>
+                <input class="input1" type="email" name="email"  value="">
+            <span></span>
                     <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="input">
-                <input class="input1" type="password" name="password" <?php echo (!empty($data
-            ['name_err'])) ? 'is-invalid' : ''; ?> value="<?php echo $data['password']; ?>">
-            <span> <?php echo $data['password_err']; ?> </span>
+                <input class="input1" type="password" name="password"  value="">
+            <span></span>
+
                     <i class="fa-solid fa-lock"></i>
                 </div>   
 

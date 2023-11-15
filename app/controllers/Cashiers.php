@@ -38,11 +38,7 @@
 
    
     public function logout() {
-        unset($_SESSION['cashier_id']);
-        unset($_SESSION['cahier_email']);
-        unset($_SESSION['cashier_name']);
-        session_destroy();
-        redirect('users/cashierlogin');
+        unset($_SESSION['USER_DATA']);
+        redirect('users/login');
      }
-
 }
