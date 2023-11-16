@@ -1,9 +1,9 @@
 <?php
 
 // DB Params
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', 'Priuscaa4025');
+define('DB_HOST','db:3306');
+define('DB_USER','root');
+define('DB_PASS','Priuscaa4025');
 define('DB_NAME', 'medsupplyx');
 
 // App Root
