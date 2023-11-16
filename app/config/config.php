@@ -9,6 +9,6 @@ define('DB_NAME', 'medsupplyx');
 // App Root
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root
-define('URLROOT', 'http://localhost/medsupplyx');
+define('URLROOT', 'https://medsupplyx.raviyax.me');
 // Site Name
 define('SITENAME', 'medsupplyx'); 
