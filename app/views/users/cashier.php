@@ -5,7 +5,7 @@
         <div class="register">
             <div class="reg-container">
                 <div class="reg-img">
-                    <img src="<?php echo URLROOT ?>/public/img/cashier.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/img/cashier.jpg" alt="">
                 </div>
                 <div class="reg-form">
                     <h1> Registration </h1>

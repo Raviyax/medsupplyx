@@ -4,7 +4,7 @@
 <title> Message </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/style.css">
+<link rel="stylesheet" href="<?php echo URLROOT ?>/css/style.css">
 </head>
 <body>
 
